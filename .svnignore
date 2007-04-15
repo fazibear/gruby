@@ -1,3 +1,4 @@
 # svn propset svn:ignore -F .svnignore .
-doc/
-pkg/
+# svn propedit svn:ignore .
+doc
+pkg
