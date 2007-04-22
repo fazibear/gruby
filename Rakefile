@@ -21,13 +21,15 @@ NAME = "GRuby"
 REV = nil # UNCOMMENT IF REQUIRED: File.read(".svn/entries")[/committed-rev="(d+)"/, 1] rescue nil
 VERS = ENV['VERSION'] || (GRuby::VERSION::STRING + (REV ? ".#{REV}" : ""))
                           CLEAN.include ['**/.*.sw?', '*.gem', '.config']
+
+ENV['VERSION'] = VERS
+
 RDOC_OPTS = ['--quiet', '--title', "GRuby documentation",
     "--opname", "index.html",
     "--line-numbers", 
     "--main", "README",
     "--inline-source"]
-ENV['VERSION'] = VERS
-#$DEBUG = true
+
 class Hoe
   def extra_deps 
     @extra_deps.reject { |x| Array(x).first == 'hoe' } 
