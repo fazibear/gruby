@@ -3,7 +3,7 @@ require 'rubygems'
 require 'hoe'
 require "#{File.dirname(__FILE__)}/lib/GRuby.rb"
 
-ENV['version'] = GRuby::VERSION
+ENV['VERSION'] = GRuby::VERSION
 
 Hoe.new('GRuby', GRuby::VERSION) do |p|
   p.rubyforge_name = 'gruby'
