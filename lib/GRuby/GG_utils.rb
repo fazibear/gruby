@@ -38,15 +38,12 @@ module GG
   # Return connection params returned from gg server.
   #
   def self.connection_params
-    require 'socket'
-    http = TCPSocket.new('appmsg.gadu-gadu.pl', '80')
-    http.puts "GET /appsvc/appmsg4.asp?fmnumber=&version=&fmt=&lastmsg= HTTP/1.0\r\n"
-    gg_connection = http.read.split("\r\n")[2].split(' ')[2].split(':')
-    gg_connection_param = { 
-    'host' => gg_connection[0],
-    'port' => gg_connection[1]
+    require 'open-uri'
+	gg_connection = open("http://appmsg.gadu-gadu.pl/appsvc/appmsg4.asp?fmnumber=").readlines[0].split(/\s/)[2].split(':')
+	gg_connection_param = { 
+    	'host' => gg_connection[0],
+    	'port' => gg_connection[1]
     }
-    http.close
     puts ":: Connection params ... host:#{gg_connection_param['host']} port:#{gg_connection_param['port']}" if $DEBUG
     return gg_connection_param
   end

@@ -14,14 +14,19 @@ module GG
     def initialize( params )
       @uin = params[:uin]
       @password = params[:password]
-      @revice_msg_callback = nil
-      @message_seq = 0
+	  @message_seq = 0
       @connected = true
       @logged = false
       @socket = nil
       @wait4login = true 
       @wait4login = params[:async] unless params[:async].nil?
-      socket_thread = Thread.new do
+      
+	  # callbacks
+	  @revice_msg_callback = nil
+	  @login_failed_callback = lambda do exit end
+	  @disconnecting_callback = lambda do exit end
+	  
+	  socket_thread = Thread.new do
         begin
           params = GG::connection_params
           @socket = TCPSocket.new( params['host'] , params['port'] )
@@ -51,11 +56,16 @@ module GG
               @wait4login = false
             when RECV_MSG
               r_packet.type   = PACKET_RECV_MSG
-
-              @recive_msg_callback.call r_packet
+              @recive_msg_callback.call r_packet if @recive_msg_callback
             when SEND_MSG_ACK
               r_packet.type =   PACKET_SEND_MSG_ACK
-            else
+			when LOGIN_FAILED
+			  puts "!! Login failed" if $DEBUG
+			  @login_failed_callback.call if @login_failed_callback
+			when DISCONNECTING
+			  puts "!! Disconecting" if $DEBUG
+			  @disconnecting_callback.call if @disconnecting_callback
+			else
               puts "?? Unknown packet" if $DEBUG 
             end
             r_packet = r_packet.destroy
@@ -76,11 +86,25 @@ module GG
     #
     # Recive message callback
     #
-    def on_recive_message( &block )
+	def on_recive_message( &block )
       @recive_msg_callback = block;
     end
 
     #
+    # Login failed callback
+    #
+    def on_login_failed( &block )
+      @login_failed = block;
+    end
+    
+    #
+    # Disconnecting callback
+    #
+    def on_diconnect( &block )
+      @disconnecting_callback = block;
+    end
+	
+	#
     # Send message
     #   :uin => GG reciver number 
     #   :message => message text

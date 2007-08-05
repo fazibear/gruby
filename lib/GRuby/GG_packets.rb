@@ -159,8 +159,8 @@ module GG
 
   module PACKET_NEW_STATUS
     attr_writer :status				# na jaki zmienić? */
-    attr_writer :description	# opis, nie musi wystąpić */
-    attr_writer :time					# czas, nie musi wystąpić */
+    attr_writer :description		# opis, nie musi wystąpić */
+    attr_writer :time				# czas, nie musi wystąpić */
 
     def type
       NEW_STATUS
