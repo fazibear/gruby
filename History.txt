@@ -1,0 +1,8 @@
+== 0.2.0 / 2007-08-05
+  * uri-open instead of socket in connection_param method
+  * few callback added
+  * readme files
+  * new rake file
+
+== 0.1.0 / 2007-04-15
+  * initial version

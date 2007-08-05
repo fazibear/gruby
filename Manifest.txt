@@ -1,16 +1,12 @@
-CHANGELOG.txt
 History.txt
 Manifest.txt
 README.txt
 Rakefile
-
 lib/GRuby.rb
-lib/GRuby/version.rb
 lib/GRuby/GG.rb
 lib/GRuby/GG_constants.rb
 lib/GRuby/GG_packets.rb
 lib/GRuby/GG_utils.rb
-setup.rb
 test/test_helper.rb
 test/test_GRuby.rb
 examples/status.rb
