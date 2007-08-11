@@ -3,6 +3,7 @@ Manifest.txt
 README.txt
 Rakefile
 lib/GRuby.rb
+lib/gruby.rb
 lib/GRuby/GG.rb
 lib/GRuby/GG_constants.rb
 lib/GRuby/GG_packets.rb

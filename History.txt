@@ -1,3 +1,6 @@
+== 0.2.1 / 2007-08-11
+  * added gruby.rb file
+
 == 0.2.0 / 2007-08-05
   * uri-open instead of socket in connection_params method
   * few callback added
