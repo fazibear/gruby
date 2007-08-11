@@ -1,5 +1,5 @@
 == 0.2.0 / 2007-08-05
-  * uri-open instead of socket in connection_param method
+  * uri-open instead of socket in connection_params method
   * few callback added
   * readme files
   * new rake file
