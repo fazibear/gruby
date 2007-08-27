@@ -1,4 +1,8 @@
 module GG
+  
+  #
+  # GG Packet class
+  #
   class PACKET
     def initialize
       puts "++ #{self} created" if $DEBUG

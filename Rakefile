@@ -7,13 +7,13 @@ ENV['VERSION'] = GRuby::VERSION
 
 Hoe.new('GRuby', GRuby::VERSION) do |p|
   p.rubyforge_name = 'gruby'
-  p.author = 'fazibear'
+  p.author = 'Michal Kalbarczyk (FaziBear)'
   p.email = 'fazibear@gmail.com'
+  p.url = ['http://gruby.rubyforge.org', 'http://fazibear.prv.pl']
   p.summary = "Gadu-Gadu protocol implementation in Ruby language"
-  p.description = p.paragraphs_of('README.txt', 2..5).join("\n\n")
-  p.url = p.paragraphs_of('README.txt', 0).first.split(/\n/)[1..-1]
-  p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
+  p.description = "Gadu-Gadu protocol implementation in Ruby language"
   p.need_zip = true
+  p.remote_rdoc_dir = ''
 end
 
 desc "Generate Manifest.new for dist"
