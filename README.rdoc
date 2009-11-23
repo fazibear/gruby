@@ -1,5 +1,4 @@
-GRuby
-    by Michal Kalbarczyk (FaziBear)
+== GRuby
     http://gruby.rubyforge.org 
     http://fazibear.prv.pl
 
