@@ -7,7 +7,7 @@ begin
     gemspec.name = "gruby"
     gemspec.summary = "Gadu-Gadu protocol implementation in Ruby language"
     gemspec.email = "fazibear@gmail.com"
-    gemspec.homepage = "http://github.com/fazibaer/gruby"
+    gemspec.homepage = "http://github.com/fazibear/gruby"
     gemspec.description = "Gadu-Gadu protocol implementation in Ruby language"
     gemspec.authors = ["fazibear"]
   end

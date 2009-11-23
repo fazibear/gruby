@@ -2,3 +2,5 @@
 # svn propedit svn:ignore .
 doc
 pkg
+.rake_tasks
+*.gem
