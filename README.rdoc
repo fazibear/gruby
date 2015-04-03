@@ -1,12 +1,11 @@
 == GRuby
+    
+Gadu-Gadu (polish communicator) protocol implementation in Ruby language.
+    
     http://gruby.rubyforge.org 
-    http://fazibear.prv.pl
-
-== DESCRIPTION:
+    http://www.rubydoc.info/github/fazibear/gruby/master
   
-Gadu-Gadu protocol implementation in Ruby language
-
-== FEATURES/PROBLEMS:
+== FEATURES:
   
 * loggin
 * set status
